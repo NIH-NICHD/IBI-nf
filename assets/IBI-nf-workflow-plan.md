@@ -49,3 +49,36 @@ Process: We will load the data into python script, fill the null value and conve
 Input: Reduced Matrix file
 Output: Converted dominant coded file ready for ICI and GWAS
 ```
+
+## Step 5
+
+```bash
+Process:  Apply IBI algorithm to find novel variants  Github Link : https://github.com/asadcfc/IBI  Next slide: Process is described through an image
+Input:  Converted dominant coded file 
+Output: Variants with Log Marginal Likelihood values from ICI algorithm and other statistics
+```
+
+## Step 6 
+
+```bash
+Process: Apply GWAS algorithm. Logistic regression association testing can be done using R script and glm function. If we have gds file we can run genesis package to do association testing. Alternatively, Fisher exact test in python using scipy library can be done also. It currently depends on the dominant coded dataset, file type and covariates.
+Input:     Converted dominant coded file 
+Output: Variants with pvalue, beta coefficients, SE and other statistics
+```
+
+## Step 7
+
+```bash
+Process: Comparison between IBI vs GWAS. It is more like deep dive data analysis. It includes violin plot for MAF of top varaints by ICI and GWAS, overlapped variants from top variants, Prediction by both GWAS and ICI, Information gain by both ICI and GWAS, Manhattan plot and others. Currently we don’t have one fixed file for that, we have multiple file for doing analysis, also we add or remove analysis tasks based on results.
+ Input: Output result file from GWAS and ICI
+ Output: Visualization (plot image files), small lists and tables.
+ ```
+
+## Step 8
+
+```bash
+Further post-process the ICI result
+Process: Annotate result ( such as using SNPnexus or VEP). Based on annotated columns, further find the novel variants for ICI and also compare with GWAS result. For this process we also add or remove tasks based on annotated values
+Input: Output result file from ICI 
+Output: Small list or table of variants
+```

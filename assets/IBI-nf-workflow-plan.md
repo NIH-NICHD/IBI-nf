@@ -15,11 +15,11 @@
 
 ## Step 1
 
-**Process:** GATK – sention powered workflow
-
-**Input:** Cohort paired fastq WGS files CHD
-
-**Output:** Merged file is ~816 GB vcf.gz
+```bash
+GATK – sention powered workflow
+Cohort paired fastq WGS files CHD
+Merged file is ~816 GB vcf.gz
+```
 
 ## Step 2
 
@@ -41,6 +41,14 @@ Any suggestion for using other tool? (from Anne, I'll have a look)
  Output: filtered MAF or Genotype calling rate or both (output from Step 3). It will be matrix with reduced columns (variants) and rows (samples). So mostly variants will be filtered as well as if need few samples will be filtered out to. So it will form a reduce matrix dimension.
 Plink directly give that output. Seqarray also has ability to produce that output. 
 ```
+
+For this step, we can install the tool using Anaconda we find we can install [plink from Anaconda using the bioconda channel](https://anaconda.org/bioconda/plink) -- looking here.
+
+This conda install can be encapsulated
+```
+conda install -c bioconda plink
+```
+
 ## Step 4
 
 ```bash

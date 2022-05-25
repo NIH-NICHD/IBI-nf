@@ -49,6 +49,11 @@ This conda install can be encapsulated
 conda install -c bioconda plink
 ```
 
+The command run we are testing with is:
+```
+plink --vcf vcf21_plink.txt --noweb --geno 0.03 --maf 0.01 --hwe 0.000001 --me 0.05 0.1 --out vcf21_plink_output --recode A-transpose
+```
+
 ## Step 4
 
 ```bash
